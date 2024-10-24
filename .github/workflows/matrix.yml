@@ -9,7 +9,10 @@ jobs:
         pkg: [core, editor, i18n]
         include:
           - pkg: app
-            flags: '--testPathPattern=".tsx"'
+            flags: '--testPathPattern=".tsx" --shard=1/2'
+            option: .tsx
+          - pkg: app
+            flags: '--testPathPattern=".tsx" --shard=2/2'
             option: .tsx
           - pkg: app
             flags: '--testPathPattern=".ts"'
