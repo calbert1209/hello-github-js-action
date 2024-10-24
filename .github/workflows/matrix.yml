@@ -1,0 +1,12 @@
+on: [workflow_dispatch]
+
+jobs:
+  test_matrix:
+    runs-on: ubuntu-latest
+    name: Try using a matrix strategy
+    strategy:
+      matrix:
+        pkg: [app, core, editor, i18n]
+    steps:
+      - name: Show output per pkg
+        run: echo "yarn ${{matrix.pkg}}"
