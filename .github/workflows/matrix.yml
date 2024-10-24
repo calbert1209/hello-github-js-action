@@ -6,7 +6,7 @@ jobs:
     name: Try using a matrix strategy
     strategy:
       matrix:
-        pkg: [app, core, editor, i18n]
+        pkg: [core, editor, i18n]
         include:
           - pkg: app
             ext: ' .tsx'
