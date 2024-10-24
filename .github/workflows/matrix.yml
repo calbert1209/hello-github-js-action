@@ -9,9 +9,9 @@ jobs:
         pkg: [app, core, editor, i18n]
         include:
           - pkg: app
-            ext: .tsx
+            ext: ' .tsx'
           - pkg: app
-            ext: .ts
+            ext: ' .ts'
     steps:
       - name: Show output per pkg
-        run: echo "yarn ${{matrix.pkg}}"
+        run: echo "yarn ${{matrix.pkg}}${{matrix.ext}}"
