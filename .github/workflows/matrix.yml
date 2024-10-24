@@ -10,8 +10,10 @@ jobs:
         include:
           - pkg: app
             flags: '--testPathPattern=".tsx"'
+            option: .tsx
           - pkg: app
             flags: '--testPathPattern=".ts"'
+            option: .ts
     steps:
-      - name: Show output per pkg
+      - name: Show output ${{matrix.pkg}}${{matrix.option}}
         run: echo "yarn ${{matrix.pkg}} test ${{matrix.flags}}"
