@@ -9,9 +9,9 @@ jobs:
         pkg: [core, editor, i18n]
         include:
           - pkg: app
-            ext: ' .tsx'
+            flags: '--testPathPattern=".tsx"'
           - pkg: app
-            ext: ' .ts'
+            flags: '--testPathPattern=".ts"'
     steps:
       - name: Show output per pkg
-        run: echo "yarn ${{matrix.pkg}}${{matrix.ext}}"
+        run: echo "yarn ${{matrix.pkg}} test ${{matrix.flags}}"
